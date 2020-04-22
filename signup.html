@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SignUpForm </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ </head>
+<body>
+        <div class="modal-dialog text-center">
+            <div class="col-sm-8 main-section">
+                <div class="modal-content">
+                    <div class="col-12 user-img">
+                        <img src="img/face.png">
+                    </div>
+                    <form class="col-12" onsubmit="event.preventDefault();register();"  autocomplete="off" >
+                       <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="input" id="name">
+                       </div>
+                       <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="input" id="email">
+                       </div>
+                       <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="input" id="password">
+                       </div>
+                       <div class="form-group">
+                        <label for="sel1">Select Role</label>
+                        <select class="form-control" id="role">
+                          <option></option>
+                          <option>Admin</option>
+                          <option>Role Manager</option>
+                          <option>Employee Manager</option>
+                          <option>Employer Manager</option>
+                          <option>Referral Amount Manager</option>
+                          <option>Job Manager</option>
+                          <option>Payout Manager</option>
+                          <option>Invoice Manager</option>
+                        </select>
+                      </div>
+                       <button type="submit" class="btn" id="submit">Register</button>
+                    </form>
+                </div>
+           </div>
+       </div>
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+       <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+       <script src="js/firebasescript.js"></script>
+       <script src="js/dashboard.js"></script>
+   </body>
+</html>

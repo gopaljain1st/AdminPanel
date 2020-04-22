@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee App</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+
+<script src="register.js"></script>
+    </head>
+    <body>
+        <div class="wave">
+        <img  src="img/bg.svg">
+        </div>
+        <div class="wrapper">
+              <div class="title">
+                  Register Form
+              </div>
+              <div class="form">
+                  <div class="input_field">
+                      <label>Name</label>
+                      <input type="text" class="input" id="name">
+                  </div>
+                  <div class="input_field">
+                    <label>Email</label>
+                    <input type="email" class="input" id="email">
+                </div>
+                <div class="input_field">
+                    <label>User Name</label>
+                    <input type="mobile" class="input" id="userName">
+                </div>
+                <div class="input_field">
+                    <label>Password</label>
+                    <input type="password" class="input" id="password">
+                </div>
+                <div class="input_field">
+                    <label>Role</label>
+                    <div class="custom_select">
+                        <select id="role">
+                            <option value="">Select</option>
+                            <option value="Admin" >Admin</option>
+                            <option value="Emplyee Manager">Employee Manager</option>
+                            <option value="Payout Manager">Payout Manager</option>
+                            <option value="Job Manager">Job Manager</option>
+                            <option value="Reports Manager">Reports Manager</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input_field">
+                    <button class="btn" id="register" onclick="register()">Register</button>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

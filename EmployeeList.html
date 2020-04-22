@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+    </head>
+        <title>EmployeeManager</title>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+       
+     </head>
+
+    <body>
+
+         <div class="container">
+                    <h1 class="text-primary text-uppercase text-center "> Employee Data</h1>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-warning mr-2" data-toggle="modal" data-target="#myModal">ADD </button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">UPDATE</button>
+                        
+                    </div>
+                    <h2 class="text-danger"> All Records</h2>
+                    <div id="records_contant">
+                    </div>
+
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+                      
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                                <h4 class="modal-title">Employee Data</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                                         <div class="form-group">
+                                                                <label>FirstName:</label>
+                                                            <input type="text" name="" id="fname" class="form-control" placeholder="FirstName">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>LastName:</label>
+                                                            <input type="text" name="" id="lname" class="form-control" placeholder="LastName">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Phone Number</label>
+                                                            <input type="number" name="" id="pnumber" class="form-control" placeholder="Phone Number">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Email:</label>
+                                                            <input type="email" name="" id="email" class="form-control" placeholder="email@xyz.com">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Address:</label>
+                                                            <input type="text" name="" id="address" class="form-control" placeholder="Address">
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label>Patym Number:</label>
+                                                                <input type="number" name="" id="paytm" class="form-control" placeholder="Paytm Number">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>UPI Number:</label>
+                                                            <input type="number" name="" id="upi" class="form-control" placeholder="UPI Number">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Account Number:</label>
+                                                            <input type="text" name="" id="account" class="form-control" placeholder="AccountNumber">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>IFSC CODE:</label>
+                                                            <input type="number" name="" id="code" class="form-control" placeholder="IFSC CODE">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Bank Name:</label>
+                                                            <input type="text" name="" id="bankName" class="form-control" placeholder="Bank Name">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Aadhar Card Number:</label>
+                                                            <input type="number" name="" id="aadhar" class="form-control" placeholder="Aadhar Card Number">
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label for="sel1">Select Profession:</label>
+                                                                <select class="form-control" id="sel1" onchange="yesnoCheck(this)" >
+                                                                <option value="">Job Seeker</option>
+                                                                <option value="student">Student</option>
+                                                                <option value="employee">Employee</option>
+                                                                </select>
+                                                                <div class="form-group" id="emp" style="display: none;">
+                                                                    <label>Enter company name</label>
+                                                                    <input type="text" id="company" class="form-control" name="" placeholder="Enter your company name"/>  
+                                                                    <label>Enter company Address</label>
+                                                                    <input type="text" id="companyaddress" class="form-control" name="" placeholder="Enter your company address"/>  
+                                                                </div>                                                     
+                                                                <div class="form-group" id="st" style="display: none; ">
+                                                                    <label>Enter college name</label>
+                                                                    <input type="text" id="college" class="form-control" name="" placeholder="Enter your college name"/> 
+                                                                    <label>Enter college Address</label>
+                                                                    <input type="text" id="collegeaddress" class="form-control" name="" placeholder="Enter your college address"/>  
+                                                                </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Current Address:</label>
+                                                            <input type="number" name="" id="cadd" class="form-control" placeholder="Current Address">
+                                                        </div>
+                                            </div>
+
+                                                       <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="addRecord()">Save</button>
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                             </div>
+                                                
+                        </div>
+                     </div>
+                                    <!-- Modal -->
+                                    <div class="modal light" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">UPDATE DATA</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div class="modal-body">
+                                            
+                                                <label>Serial Number:</label>
+                                                <input type="text/number" name="" id="snumber" class="form-control" placeholder="Serial Number">
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-danger">Update</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+         </div>
+
+
+         
+                  <div style="float: left;">
+                     <table class="table table-bordered table-hover">
+                                        
+                        <thead class="thead-dark">
+                            
+                            <tr>
+                                <th scope="col">S.No.</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Phone Number</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Patym Number</th>
+                                <th scope="col">UPI Number</th>
+                                <th scope="col">Account Number</th>
+                                <th scope="col">IFSC CODE</th>
+                                <th scope="col">Bank Name</th>
+                                <th scope="col">Aadhar Card Number</th>
+                                <th scope="col">Profession</th>
+                                <th scope="col">Current Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                            </tr>
+                            <tr>
+                               <th scope="row">2</th>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row">3</th>
+                               <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                                <td>empty</td>
+                            </tr>
+
+                            <tr>
+                                  <th scope="row">4</th>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                            </tr>
+
+                            <tr>
+                                 <th scope="row">5</th>
+                                 <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                                  <td>empty</td>
+                              </tr>
+
+
+                        </tbody>
+
+
+         
+                </table>
+                <div class="d-flex-row  justify-content-end">
+                    <button type="button" class="btn btn-warning"><a style="color: black;" href="loginForm.html">Logout</a> </button>
+                </div>
+
+
+</div>
+
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+                            <script src="https://kit.fontawesome.com/e9b6b2b17d.js" crossorigin="anonymous"></script>
+                            <script src="js/main.js"></script>
+
+
+
+
+     </body>
+
+
+
+
+</html>

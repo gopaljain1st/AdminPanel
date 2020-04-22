@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Job Completion Report</title>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+     </head>
+    <body>
+         <div class="container">
+             <h1 class="text-success text-uppercase text-center">Job Completion Report</h1>
+             <div class="d-flex justify-content-start">
+                <button type="button" class="btn btn-warning mr-2" onclick="export2csv('JobCompletionReport')">Download Data Report </button>
+            </div>
+            <h2 class="text-success text-uppercase text-center">All Records</h2>
+        </div>
+        <div>
+                        <table class="table table-bordered table-hover" id="dataTable">
+                                        <thead class="thead-light text-uppercase text-success">
+                                          <tr>
+                                              <th scope="col">S.No.</th>
+                                              <th scope="col">JOB_ID</th>
+                                              <th scope="col">COMPANY</th>
+                                              <th scope="col">Job_Title</th>
+                                              <th scope="col">Payment_Status</th>
+                                              <th scope="col">Date</th>
+                                              <th scope="col">Amount</th>
+                                          </tr>
+                                        </thead>
+                        </table>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+        <script src="js/firebasescript.js"></script>
+        <script src="js/ReportManager.js"></script>
+     </body>
+</html>
